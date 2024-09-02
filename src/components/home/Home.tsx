@@ -1,5 +1,11 @@
 const HomeComponent = () => {
-  return <>Homepage</>;
+  return (
+    <>
+      <button type="button" className="btn btn-primary">
+        Homepage
+      </button>
+    </>
+  );
 };
 
 export default HomeComponent;
