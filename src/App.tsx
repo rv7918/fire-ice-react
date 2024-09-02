@@ -1,12 +1,13 @@
-import "./App.css";
-import HomeComponent from "./components/home/Home";
-import DetailComponent from "./components/DetailPage/DetailComponent";
+// import HomeComponent from "./components/home/Home";
+// import DetailComponent from "./components/DetailPage/DetailComponent";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <>
-      <HomeComponent /> <br />
-      <DetailComponent />
+      <Header />
+      {/* <HomeComponent /> <br />
+      <DetailComponent /> */}
     </>
   );
 }
