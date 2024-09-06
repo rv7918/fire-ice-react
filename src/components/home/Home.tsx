@@ -1,5 +1,6 @@
 import React from "react";
 import { IHomeData } from "./Home.interface";
+import Card from "../card/Card";
 
 const HomeComponent = () => {
   // BaseUrl
@@ -26,21 +27,24 @@ const HomeComponent = () => {
     }
   };
 
-  //Lifecycle hook to getData onMount
+  // Lifecycle hook to getData onMount
   React.useEffect(() => {
     getData();
   }, []);
 
   //Render the view
   return (
-    <div className="container mt-5">
-      <h1>Home</h1>
+    <div className="container">
       {loading ? (
         <>Loading...</>
       ) : error ? (
         <>Error {error}</>
       ) : (
-        <>{JSON.stringify(data)}</>
+        <>
+          <div className="row">
+            <Card data={data} />
+          </div>
+        </>
       )}
     </div>
   );
