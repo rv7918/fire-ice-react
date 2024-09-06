@@ -10,7 +10,7 @@ const Card = (props: ICard) => {
     <>
       {props?.data.map((item, index) => {
         return (
-          <div key={index} className="col-sm-3">
+          <div key={index} className="col-lg-3">
             <div className="card mb-3">
               <div className="card-body">
                 <h5 className="card-title">{item?.name}</h5>
