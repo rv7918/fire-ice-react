@@ -1,12 +1,16 @@
 import HomeComponent from "./components/home/Home";
-// import DetailComponent from "./components/DetailPage/DetailComponent";
+import DetailComponent from "./components/DetailPage/DetailComponent";
 import Header from "./components/header/Header";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header /> <br />
-      <HomeComponent /> <br />
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomeComponent />} />
+        <Route path="/details" element={<DetailComponent />} />
+      </Routes>
     </>
   );
 }
