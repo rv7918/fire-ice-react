@@ -1,6 +1,7 @@
 import React from "react";
 import { IHomeData } from "./Home.interface";
 import Card from "../card/Card";
+import Paginate from "../paginate/Paginate";
 import "./home.css";
 
 const HomeComponent = () => {
@@ -48,19 +49,7 @@ const HomeComponent = () => {
           <div className="row">
             <Card data={data} />
           </div>
-          <button
-            className="btn btn-secondary paginate-btn"
-            onClick={() => setPage((prev) => prev - 1)}
-            disabled={page === 1}
-          >
-            Prev
-          </button>
-          <button
-            className="btn btn-secondary paginate-btn"
-            onClick={() => setPage((prev) => prev + 1)}
-          >
-            Next
-          </button>
+          <Paginate page={page} setPage={setPage} />
         </>
       )}
     </div>

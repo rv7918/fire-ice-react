@@ -17,7 +17,11 @@ const Card = (props: ICard) => {
                 <h6 className="card-subtitle mb-2 text-muted">
                   {item?.region}
                 </h6>
-                <p className="card-text">{item?.coatOfArms}</p>
+                <p className="card-text">
+                  {item?.coatOfArms.length > 0
+                    ? item?.coatOfArms
+                    : "No Information"}
+                </p>
               </div>
             </div>
           </div>
