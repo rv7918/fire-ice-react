@@ -9,7 +9,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomeComponent />} />
+        <Route path="/home" element={<HomeComponent />} />
         <Route path="/details" element={<DetailComponent />} />
+        <Route path="/details/:id" element={<DetailComponent />} />
       </Routes>
     </>
   );
