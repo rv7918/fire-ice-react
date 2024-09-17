@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { IDetails } from "./Detail.interface";
+import axios from "axios";
 
 const DetailComponent = () => {
   const { id } = useParams();
@@ -12,12 +13,11 @@ const DetailComponent = () => {
 
   const getDetailsData = async () => {
     try {
-      const response = await fetch(baseDetailsUrl);
-      if (!response.ok) {
+      const response = await axios.get(baseDetailsUrl).then((res) => res.data);
+      if (!response) {
         throw new Error("Network response was not ok.");
       }
-      const data = await response.json();
-      setDetailsData(data);
+      setDetailsData(response);
       setLoading(false);
     } catch (error) {
       setError(error.message);

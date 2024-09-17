@@ -2,6 +2,7 @@ import React from "react";
 import { IHomeData } from "./Home.interface";
 import Card from "../card/Card";
 import Paginate from "../paginate/Paginate";
+import axios from "axios";
 import "./home.css";
 
 const HomeComponent = () => {
@@ -18,12 +19,11 @@ const HomeComponent = () => {
   // GetData function
   const getData = async () => {
     try {
-      const response = await fetch(baseUrl);
-      if (!response.ok) {
+      const response = await axios.get(baseUrl).then((res) => res.data);
+      if (!response) {
         throw new Error("Network response was not ok.");
       }
-      const data = await response.json();
-      setData(data);
+      setData(response);
       setLoading(false);
     } catch (error) {
       setError(error.message);
