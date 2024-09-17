@@ -198,10 +198,60 @@ const homeResponse = (req, res, ctx) => {
           "https://anapioficeandfire.com/api/characters/1812",
         ],
       },
+      {
+        url: "https://anapioficeandfire.com/api/houses/9",
+        name: "House of Test",
+        region: "The Reach",
+        coatOfArms:
+          "Tenny, a sun in splendour beneath a chevron inverted argent",
+        words: "Our Sun Shines Bright",
+        titles: ["Lord of Ashford"],
+        seats: ["Ashford"],
+        currentLord: "",
+        heir: "",
+        overlord: "https://anapioficeandfire.com/api/houses/398",
+        founded: "",
+        founder: "",
+        diedOut: "",
+        ancestralWeapons: [],
+        cadetBranches: [],
+        swornMembers: [
+          "https://anapioficeandfire.com/api/characters/121",
+          "https://anapioficeandfire.com/api/characters/641",
+          "https://anapioficeandfire.com/api/characters/895",
+          "https://anapioficeandfire.com/api/characters/1812",
+        ],
+      },
     ])
+  );
+};
+
+const detailPageResponse = (req, res, ctx) => {
+  return res(
+    ctx.status(200),
+    ctx.json({
+      url: "https://anapioficeandfire.com/api/houses/1",
+      name: "House Algood",
+      region: "The Westerlands",
+      coatOfArms:
+        "A golden wreath, on a blue field with a gold border(Azure, a garland of laurel within a bordure or)",
+      words: "",
+      titles: [],
+      seats: [],
+      currentLord: "",
+      heir: "",
+      overlord: "https://anapioficeandfire.com/api/houses/229",
+      founded: "",
+      founder: "",
+      diedOut: "",
+      ancestralWeapons: [],
+      cadetBranches: [],
+      swornMembers: [],
+    })
   );
 };
 
 export const handlers = [
   rest.get(`https://anapioficeandfire.com/api/houses`, homeResponse),
+  rest.get("https://anapioficeandfire.com/api/houses/1", detailPageResponse),
 ];
