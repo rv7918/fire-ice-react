@@ -40,6 +40,11 @@ describe("Home tests", () => {
     fireEvent.click(PaginateBtnNext);
     const apiNextText = await screen.findByText("House of Test");
     expect(apiNextText).toBeInTheDocument();
+    const firstPaginateBtn = await screen.findByTestId("first-btn");
+    fireEvent.click(firstPaginateBtn);
+    fireEvent.click(PaginateBtnNext);
+    const lastPaginateBtn = await screen.findByTestId("last-btn");
+    fireEvent.click(lastPaginateBtn);
     const paginateBtnPrevious = await screen.findByTestId("prev-btn");
     expect(paginateBtnPrevious).toBeInTheDocument();
     fireEvent.click(paginateBtnPrevious);

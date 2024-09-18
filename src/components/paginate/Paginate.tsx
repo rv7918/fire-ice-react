@@ -7,6 +7,7 @@ const Paginate = (props) => {
         className="btn btn-secondary paginate-btn"
         onClick={() => setPage(() => 1)}
         disabled={page === 1}
+        data-testid="first-btn"
       >
         First
       </button>
@@ -30,6 +31,7 @@ const Paginate = (props) => {
         className="btn btn-secondary paginate-btn"
         onClick={() => setPage(() => 56)}
         disabled={page === 56}
+        data-testid="last-btn"
       >
         Last
       </button>
